@@ -1,7 +1,7 @@
 @startuml
 actor Customer
 Customer ->> Receptionist: Arrive and Ask for reservation
-Receptionist -->> Customer : Confirm table resercation
+Receptionist -->> Customer : Confirm table reservation
 Customer ->> Waiter: Request Order
 Waiter ->> Kitchen: Send Order to Kitchen
 Kitchen -->> Waiter: Confirm Order
