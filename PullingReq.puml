@@ -1,0 +1,21 @@
+@startuml
+title "Git pulling request sequence diagram"
+local ->> git: $git clone "https//..."
+git ->> remote: request for repo
+remote -->> git: return requested repo
+git -->> local: returned repo
+local ->> local: made changes
+local ->> git: $git add .
+local ->> git: $git commit -m "c1"
+local ->> git: $git commit -m "c2"
+local ->> git: $git remote add origin "https//..."
+git -->> local: origin added
+local ->> git: $git push -u origin main
+git ->> remote: commits pushed to remote
+local2->> remote: made some commits
+local ->> local: made changes&commits
+local ->> git: $git pull origin main:main
+git -->> local: $returned new commits
+local ->> git: $git push main
+git ->> remote: new commits pushed
+@enduml
