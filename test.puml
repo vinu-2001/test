@@ -1,0 +1,15 @@
+@startuml
+actor Customer
+Customer ->> Receptionist: Arrive and Ask for reservation
+Receptionist -->> Customer : Confirm table resercation
+Customer ->> Waiter: Request Order
+Waiter ->> Kitchen: Send Order to Kitchen
+Kitchen -->> Waiter: Confirm Order
+Waiter -->> Customer: Serve Food
+Customer ->> Waiter: Request Bill
+Waiter ->> BillingSystem: Generate Bill
+BillingSystem -->> Waiter: Send Bill
+Waiter -->> Customer: Present Bill
+Customer ->> Waiter: Make Payment
+Waiter ->> BillingSystem: Confirm Payment
+@enduml
